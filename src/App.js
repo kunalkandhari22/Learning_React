@@ -1,6 +1,6 @@
 import React, {Component, useState} from 'react';
 import Person from './Person/Person';
-import './App.css';
+import classes from './App.css';
 
 class App extends Component {
   state = {
@@ -91,20 +91,20 @@ class App extends Component {
         styles.backgroundColor = 'red';
     }
 
-    const classes = [];
+    const assignedClasses = [];
     if(this.state.persons.length <=  2) {
-      classes.push('red');
+      assignedClasses.push(classes.red);
     }
 
     if(this.state.persons.length <=  1) {
-      classes.push('bold');
+      assignedClasses.push(classes.bold);
     }
 
 
     return (
-        <div className="App">
+        <div className={classes.App}>
           <h1>Hello there!, This is an React App</h1>
-          <p className={classes.join(' ')}>Dynamic Styling (remove a person and see)</p>
+          <p className={assignedClasses.join(' ')}>Dynamic Styling (remove a person and see)</p>
           {persons}     
           {/* OR  */}   
           {/* { this.state.showPerso  n === true ?
