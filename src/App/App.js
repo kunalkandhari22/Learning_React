@@ -1,6 +1,6 @@
 import React, {Component, useState} from 'react';
-import Person from './Person/Person';
-import classes from './App.css';
+import Person from '../Person/Person.js';
+import classes from './App.module.css';
 
 class App extends Component {
   state = {
@@ -53,17 +53,18 @@ class App extends Component {
 
   render() {
 
-    const styles = {
-      backgroundColor: 'green',          // or 'background-color'
-      padding: '8px',
-      color: 'white',
-      border: '2px dashed darkgreen',
-      cursor: 'pointer',
-      font: 'inherit',
-      margin: '16px'
-    };
+    // const styles = {
+    //   backgroundColor: 'green',          // or 'background-color'
+    //   padding: '8px',
+    //   color: 'white',
+    //   border: '2px dashed darkgreen',
+    //   cursor: 'pointer',
+    //   font: 'inherit',
+    //   margin: '16px'
+    // };
 
     let persons = null;
+    let btnClass = classes.btn;
 
     if(this.state.showPerson) {
       persons = (
@@ -88,7 +89,7 @@ class App extends Component {
           </Person> */}
         </div> )
         
-        styles.backgroundColor = 'red';
+        btnClass = classes.button_Red;
     }
 
     const assignedClasses = [];
@@ -122,10 +123,12 @@ class App extends Component {
           </div> : null
           } */}
           <button 
-            style={styles}
-            onClick={this.nameChangeHandler.bind(this, 'XYZ')} key='1'>Switch name</button>
+            className={btnClass}
+            onClick={this.nameChangeHandler.bind(this, 'XYZ')}>Switch name</button>
             <br />
-          <button style={styles} onClick={this.togglePersonHandler} key='2'>Toggle Person</button>
+          <button 
+            className={btnClass}
+            onClick={this.togglePersonHandler} >Toggle Person</button>
         </div>
     )
   }
