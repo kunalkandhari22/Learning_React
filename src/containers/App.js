@@ -101,13 +101,14 @@ class App extends Component {
     return (
         <div className={classes.App}>
           <Cockpit 
+            title={this.props.appTitle}
             persons={this.state.persons}
             showPerson={this.state.showPerson}
             togglePerson={this.togglePersonHandler}
             nameChange={this.nameChangeHandler.bind(this, 'XYZ')} />
           {persons}     
           {/* OR  */}   
-          {/* { this.state.showPerso  n === true ?
+          {/* { this.state.showPerson === true ?
           <div> 
             <Person
               name={this.state.persons[0].name}

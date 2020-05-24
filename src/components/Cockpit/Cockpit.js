@@ -20,6 +20,7 @@ const cockpit = (props) => {
 
     return (
         <div className={style.Cockpit}>
+            <h1>{props.title}</h1>
             <h1>Hello there!, This is an React App</h1>
             <p className={assignedClasses.join(' ')}>Dynamic Styling (remove a person and see)</p>
             <button 
